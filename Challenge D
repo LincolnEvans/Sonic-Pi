@@ -1,1 +1,102 @@
+use_bpm 136
+use_synth :piano
+
+define :measure5_7 do
+  play:B4
+  sleep 0.75
+  play:As4
+  sleep 0.25
+  play:Gs4
+  play:B4
+  sleep 0.75
+  play:Cs5
+  sleep 0.25
+  play:B4
+  sleep 1
+  play:Gs4
+  play:E5
+  sleep 1
+end
+
+define :measure2_8 do
+  play:E4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 2
+  play:E5
+  play:Gs4
+  sleep 1
+end
+
+define :measure3_4_6 do
+  play :r
+  sleep 1
+  play:E5
+  play:Gs4
+  play:B4
+  sleep 1
+  play:B4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 1
+end
+
+define :background do
+  play:E3
+  sleep 1
+  play:B3
+  play:E4
+  sleep 1
+  play:B3
+  sleep 1
+  play:E4
+  sleep 1
+end
+
+live_loop:background_notes do
+  background amp: 0.25
+  
+  
+  background amp: 0.5
+  
+  background amp: 0.75
+  
+  5.times do
+    background amp: 1
+  end
+  stop
+end
+
+# Measure 1
+play :r
+sleep 1
+play:E4
+play:Gs4
+sleep 2
+play:E5
+play:Gs4
+sleep 1
+
+# Measure 2
+measure2_8
+
+# Measure 3
+measure3_4_6
+
+# Measure 4
+measure3_4_6
+
+# Measure 5
+measure5_7
+
+# Measure 6
+measure3_4_6
+
+# Measure 7
+measure5_7
+
+# Measure 8
+measure2_8
 
