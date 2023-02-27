@@ -11,6 +11,11 @@ use_synth :piano
 end
 sleep 1
 
+heart_attack="C:/Users/Lincoln Evans/Documents/Audacity/Heart Attack.wav"
+
+sample heart_attack
+sleep 1
+
 define :best_part do
   play :f6
   play :f5
