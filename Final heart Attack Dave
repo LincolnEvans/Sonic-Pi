@@ -1,7 +1,16 @@
-# Welcome to Sonic Pi
 use_bpm 101
 use_synth :piano
 #front notes
+5.times do
+  with_fx :compressor do
+    sample :drum_bass_soft, amp: 0.3
+    sleep 0.5
+    sample :drum_bass_soft, amp: 0.3
+    sleep 1
+  end
+end
+sleep 1
+
 define :best_part do
   play :f6
   play :f5
