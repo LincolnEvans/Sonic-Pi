@@ -1,1 +1,15 @@
+# Welcome to Sonic Pi
+p = 21
+88.times do
+  
+  play p
+  p = p + 1
+  sleep 0.25
+end
+p = 108
 
+88.times do
+  play p
+  p = p- 1
+  sleep 0.125
+end
