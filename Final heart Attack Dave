@@ -1,9 +1,7 @@
-
 heart_attack="C:/Users/Lincoln Evans/Documents/Audacity/Heart Attack.wav"
 use_bpm 101
 use_synth :piano
 #front notes
-beat = [
 a=0.08
 5.times do
   with_fx :compressor do
@@ -15,42 +13,23 @@ a=0.08
   end
 end
 sleep 1.125
-
 sample heart_attack
 sleep 63.75
-
-
+part_best= [:f6,:f6,:e6,:e6,:d6,:d6,:b5,:b5,:g5,:c6,]
+part_best1= [:f5,:f5,:e5,:e5,:d5,:d5,:b4,:b4,:g4,:c5]
+p=0
+define :array do
+  10.times do
+    play part_best[p]
+    play part_best1[p]
+    sleep 0.5
+    p=p+1
+  end
+  p=0
+end
 define :best_part do
-  play :f6
-  play :f5
-  sleep 0.5
-  play :f6
-  play :f5
-  sleep 0.5
-  play :e6
-  play :e5
-  sleep 0.5
-  play :e6
-  play :e5
-  sleep 0.5
-  play :d6
-  play :d5
-  sleep 0.5
-  play :d6
-  play :d5
-  sleep 0.5
-  play :b5
-  play :b4
-  sleep 0.5
-  play :b5
-  play :b4
-  sleep 0.5
-  play :g5
-  play :g4
-  sleep 0.5
-  play :c6
-  play :c5
-  sleep 2
+  array
+  sleep 1.5
   play :a5
   play :g5
   play :e5
@@ -97,12 +76,8 @@ define :best_part do
   play :f5
   play :b4
   sleep 1
-  
 end
-
-
 define :start_end do
-  
   play :b4
   play :g4
   sleep 2
@@ -145,7 +120,6 @@ define :start_end do
   play :c4
   sleep 4
 end
-
 live_loop :front do
   1.times do
     play :e5, amp: 0.25
@@ -355,10 +329,6 @@ live_loop :front do
   end
   stop
 end
-
-
-
-
 define :back_mid do
   play :d3
   play :d2
@@ -392,9 +362,7 @@ define :back_mid do
   play :b3
   play :g3
   sleep 2
-  
 end
-
 live_loop :back do
   1.times do
     sleep 36
@@ -548,7 +516,6 @@ live_loop :back do
   end
   stop
 end
-
 live_loop :my_other_lop do
   sleep 40
   8.times do
@@ -557,4 +524,3 @@ live_loop :my_other_lop do
   end
   stop
 end
-
