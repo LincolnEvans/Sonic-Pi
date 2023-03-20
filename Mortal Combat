@@ -1,1 +1,62 @@
 
+use_bpm 120
+use_synth :chiplead
+
+
+# MEASURE 1 ---------------------------
+define :chick do |n1,n2|
+  play n1
+  play n2
+  sleep 0.5
+end
+
+live_loop :mortal do
+  chick :a4, :a5
+  chick :c5, :c6
+  chick :a4, :a5
+  chick :d5, :d6
+  chick :a4, :a5
+  chick :e5, :e6
+  chick :d5, :d6
+  
+  
+  
+  
+  # MEASURE 2 ---------------------------
+  chick :c5, :c6
+  chick :c5, :c6
+  chick :e5, :e6
+  chick :c5, :c6
+  chick :g5, :g6
+  chick :c5, :c6
+  chick :e5, :e6
+  chick :c5, :c6
+  
+  
+  
+  
+  # MEASURE 3 ---------------------------
+  chick :g4, :g5
+  chick :g4, :g5
+  chick :b4, :b5
+  chick :g4, :g5
+  chick :c5, :c6
+  chick :g4, :g5
+  chick :d5, :d6
+  chick :c5, :c6
+  
+  
+  
+  
+  # MEASURE 4 ---------------------------
+  chick :f4, :f5
+  chick :f4, :f5
+  chick :a4, :a5
+  chick :f4, :f5
+  chick :c5, :c6
+  chick :f4, :f5
+  chick :c5, :c6
+  chick :b4, :b5
+end
+
+
