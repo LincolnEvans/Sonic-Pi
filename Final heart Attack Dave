@@ -1,7 +1,6 @@
 heart_attack="C:/Users/Lincoln Evans/Documents/Audacity/Heart Attack.wav"
 use_bpm 101
 use_synth :piano
-#front notes
 a=0.08
 5.times do
   with_fx :compressor do
@@ -77,57 +76,54 @@ define :best_part do
   play :b4
   sleep 1
 end
-define :start_end do
-  play :b4
-  play :g4
-  sleep 2
-  play :d5
-  play :a4
-  play :f4
-  play :d4
-  sleep 4
-  play :d5
-  play :b4
-  play :g4
-  play :e4
-  sleep 4
-  play :c5
-  play :g4
-  play :e4
-  sleep 4
-  play :f5
-  play :c5
-  play :a4
-  play :f4
-  sleep 4
-  play :d5
-  play :b4
-  play :g4
-  play :d4
-  sleep 2
-  play :f4
-  play :d4
-  sleep 2
-  play :c5
-  play :g4
-  play :e4
-  play :c4
-  sleep 2
-  play :f4
-  play :d4
-  sleep 2
-  play :e4
-  play :c4
-  sleep 4
-end
 live_loop :front do
   1.times do
-    play :e5, amp: 0.25
+    play :e5, amp: 0.125
+    play :g4, amp: 0.125
+    play :e4, amp: 0.125
+    sleep 2
+    play :d5, amp: 0.5
+    play :b4, amp: 0.5
     play :g4, amp: 0.5
-    play :e4, amp: 0.75
     sleep 2
+    play :d5, amp: 0.75
+    play :a4, amp: 0.75
+    play :f4, amp: 0.75
+    play :d4, amp: 0.75
+    sleep 4
     play :d5
-    start_end
+    play :b4
+    play :g4
+    play :e4
+    sleep 4
+    play :c5
+    play :g4
+    play :e4
+    sleep 4
+    play :f5
+    play :c5
+    play :a4
+    play :f4
+    sleep 4
+    play :d5
+    play :b4
+    play :g4
+    play :d4
+    sleep 2
+    play :f4
+    play :d4
+    sleep 2
+    play :c5
+    play :g4
+    play :e4
+    play :c4
+    sleep 2
+    play :f4
+    play :d4
+    sleep 2
+    play :e4
+    play :c4
+    sleep 4
     play :e6
     play :g5
     play :e5
@@ -168,164 +164,6 @@ live_loop :front do
     play :f5
     play :d5
     sleep 2
-    play :d6
-    play :a6
-    play :f5
-    play :d5
-    sleep 3
-    sleep 0.5
-    play :f6
-    play :f5
-    sleep 0.5
-    play :f6
-    play :f5
-    sleep 0.5
-    play :e6
-    play :e5
-    sleep 0.5
-    play :e6
-    play :e5
-    sleep 0.5
-    play :d6
-    play :d5
-    sleep 0.5
-    play :d6
-    play :d5
-    sleep 0.5
-    play :b5
-    play :b4
-    sleep 0.5
-    play :b5
-    play :b4
-    sleep 0.5
-    play :g5
-    play :g4
-    sleep 1
-    play :c6
-    play :c5
-    sleep 1
-    sleep 1
-    play :a5
-    play :g5
-    play :e5
-    play :c5
-    sleep 1
-    sleep 1
-    play :f5
-    play :c5
-    play :a4
-    play :f4
-    sleep 2
-    play :e5
-    play :c5
-    play :a4
-    play :f4
-    sleep 2
-    play :d5
-    play :b4
-    play :g4
-    play :d4
-    sleep 2
-    play :b4
-    play :g4
-    play :f4
-    play :d4
-    sleep 2
-    play :e5
-    play :g4
-    play :e4
-    sleep 2
-    play :d5
-    play :b4
-    play :f4
-    sleep 2
-    play :c5
-    play :g4
-    play :e4
-    sleep 1
-    play :d5
-    play :f4
-    sleep 1
-    play :e5
-    play :g4
-    sleep 1
-    play :f5
-    play :b4
-    sleep 1
-    play :e5
-    play :g4
-    play :e4
-    sleep 2
-    play :d5
-    play :g4
-    play :f4
-    sleep 2
-    play :c5
-    play :a4
-    play :g4
-    play :e4
-    sleep 2
-    play :a4
-    play :g4
-    play :e4
-    sleep 2
-    play :f4
-    sleep 0.5
-    play :g4
-    play :c4
-    sleep 2
-    play :e4
-    play :c4
-    sleep 1
-    play :f4
-    play :d4
-    play :c4
-    sleep 1
-    play :a4
-    play :E4
-    play :C4
-    sleep 2
-    play :a4
-    play :g4
-    play :e4
-    play :c4
-    sleep 2
-    play :f4
-    play :a3
-    sleep 2
-    play :d4
-    play :b3
-    play :a3
-    play :f3
-    sleep 2
-    play :b3
-    sleep 0.5
-    play :f4
-    play :c4
-    play :f3
-    sleep 2
-    play :b3
-    play :f3
-    sleep 2
-    play :g4
-    play :d4
-    play :b3
-    sleep 2
-    play :b4
-    play :g4
-    play :d4
-    play :b3
-    sleep 1
-    play :g4
-    sleep 1
-    play :b4
-    play :g4
-    play :g5
-    sleep 4
-    play :b5
-    play :d5
-    sleep 4
-    start_end
   end
   stop
 end
@@ -401,125 +239,13 @@ live_loop :back do
     play :g3
     play :c3
     sleep 2
-    back_mid
-    play :c3
-    play :c2
-    sleep 2
-    play :c3
-    play :c2
-    sleep 2
-    play :c3
-    play :c2
-    sleep 4
-    play :c2
-    sleep 1
-    play :g3
-    sleep 1
-    play :c4
-    sleep 1
-    play :g3
-    sleep 1
-    play :a2
-    sleep 1
-    play :a3
-    sleep 2
-    play :c4
-    sleep 1
-    play :a2
-    sleep 1
-    play :e3
-    sleep 1
-    play :a3
-    sleep 1
-    sleep 1
-    play :f2
-    sleep 1
-    play :c3
-    sleep 1
-    play :g3
-    play :a3
-    sleep 1
-    play :c3
-    sleep 1
-    play :e2
-    sleep 1
-    play :b2
-    sleep 2
-    play :b2
-    sleep 1
-    play :d2
-    sleep 1
-    play :d3
-    sleep 2
-    play :d3
-    sleep 1
-    play :b2
-    sleep 1
-    play :g3
-    sleep 3
-    play :d4
-    play :b3
-    play :g3
-    sleep 4
-    sleep 4
-    play :c3
-    play :c1
-    sleep 2
-    play :b3
-    play :g3
-    play :c3
-    sleep 2
-    play :d1
-    sleep 2
-    play :c4
-    play :f3
-    play :d3
-    sleep 2
-    play :e3
-    sleep 2
-    play :d4
-    play :b3
-    play :g3
-    play :e3
-    sleep 2
-    play :a3
-    play :a2
-    sleep 2
-    play :c4
-    play :e4
-    play :a3
-    play :g3
-    sleep 2
-    play :f2
-    sleep 2
-    play :a3
-    play :c4
-    play :e4
-    play :g4
-    sleep 2
-    play :g2
-    sleep 1
-    play :d3
-    sleep 1
-    play :b3
-    play :g3
-    sleep 2
-    play :c2
-    sleep 2
-    play :b3
-    play :g3
-    play :c3
-    sleep 2
-    play :g3
-    play :c3
-    sleep 4
   end
   stop
 end
 live_loop :my_other_lop do
   sleep 40
-  8.times do
-    sample :drum_bass_soft, amp: 0.5
+  60.times do
+    sample :drum_bass_soft, amp: 0.25
     sleep 1
   end
   stop
