@@ -1,6 +1,6 @@
 use_bpm 112
 use_synth :piano
-live_loop :intro do
+define :intro do
   5.times do
     play :g5, sustain: 4
     play :c5, sustain: 4
@@ -52,10 +52,7 @@ live_loop :intro do
   stop
 end
 
-
-
-
-live_loop :intro_back do
+define :intro_back do
   5.times do
     play :c4
     play :c3
@@ -78,14 +75,16 @@ live_loop :intro_back do
   end
   stop
 end
-
-
-
+live_loop :ya do
+  intro
+end
+live_loop :ye do
+  intro_back
+end
 
 sleep 64
 live_loop :fn do
   2.times do
-    
     play :g4
     play :c4
     sleep 0.5
