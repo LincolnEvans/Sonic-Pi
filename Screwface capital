@@ -181,7 +181,7 @@ beat = [:g4,:bb4,:g4,:c5,:g4,:d5,:g4,:eb5,:g4,:f5,:g4,:g5,:g4,:bb4,:g4,:c5,:g4,:
 snooz = [0.5,0.5,1,0.5,0.5,1,0.5,0.5,0.5,0.5,0.5,1.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
 define :array1 do
   live_loop :arr do
-    1.times do
+    27.times do
       play (beat[x])
       sleep (snooz[x])
       x=x+1
@@ -191,6 +191,7 @@ define :array1 do
     elsif
       x=x
     end
+    stop
   end
 end
 
@@ -247,7 +248,7 @@ live_loop :fnn do
     sleep 1
     play :c4
     play :b2
-    sleep 2
+    sleep 4
   end
   stop
 end
@@ -258,5 +259,3 @@ define :yea do |a,b,c|
   play c
   sleep 2
 end
-
-
