@@ -1,6 +1,7 @@
+
 use_bpm 112
 use_synth :piano
-define :intro do
+live_loop :intro do
   5.times do
     play :g5, sustain: 4
     play :c5, sustain: 4
@@ -52,7 +53,10 @@ define :intro do
   stop
 end
 
-define :intro_back do
+
+
+
+live_loop :intro_back do
   5.times do
     play :c4
     play :c3
@@ -75,12 +79,9 @@ define :intro_back do
   end
   stop
 end
-live_loop :ya do
-  intro
-end
-live_loop :ye do
-  intro_back
-end
+
+
+
 
 sleep 64
 live_loop :fn do
@@ -88,62 +89,8 @@ live_loop :fn do
     play :g4
     play :c4
     sleep 0.5
-    play :g4
-    sleep 0.5
-    play :bb4
-    sleep 0.5
-    play :g4
-    sleep 1
-    play :c5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :d5, sustain: 4
-    sleep 0.5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :eb5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :f5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :g5
-    sleep 1
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :bb4
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :c5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :d5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :eb5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :e5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :f5
-    sleep 0.5
-    play :g4
-    sleep 0.5
-    play :gb5
-    sleep 0.5
-    play :g4
-    sleep 0.5
+    array1
+    sleep 15.5
     play :g5
     sleep 1/3.0
     play :g4
@@ -229,9 +176,28 @@ live_loop :fn do
   end
   stop
 end
+x=0
+beat = [:g4,:bb4,:g4,:c5,:g4,:d5,:g4,:eb5,:g4,:f5,:g4,:g5,:g4,:bb4,:g4,:c5,:g4,:d5,:g4,:eb5,:g4,:e5,:g4,:f5,:g4,:gb5,:g4]
+snooz = [0.5,0.5,1,0.5,0.5,1,0.5,0.5,0.5,0.5,0.5,1.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
+define :array1 do
+  live_loop :arr do
+    1.times do
+      play (beat[x])
+      sleep (snooz[x])
+      x=x+1
+    end
+    if x==27
+      x=0
+    elsif
+      x=x
+    end
+  end
+end
+
+
 
 live_loop :fnn do
-  2.times do
+  2. times do
     play :d4
     play :c3
     sleep 4
@@ -258,30 +224,13 @@ live_loop :fnn do
     play :bb2
     play :db3
     sleep 1
-    play :eb3
-    play :c3
-    play :ab2
-    sleep 2
-    play :f3
-    play :d3
-    play :bb2
-    sleep 2
-    play :f3
-    play :d3
-    play :bb2
-    sleep 2
-    play :g3
-    play :eb3
-    play :c3
-    sleep 2
-    play :eb3
-    play :c3
-    play :a2
-    sleep 2
-    play :eb3
-    play :c3
-    play :ab2
-    sleep 2
+    yea :eb3,:c3,:ab2
+    yea :f3,:d3,:bb2
+    yea :f3,:d3,:bb2
+    yea :g3,:eb3,:c3
+    yea :eb3,:c3,:a2
+    yea :eb3,:c3,:ab2
+    sleep 12
     play :c4
     play :a3
     play :f3
@@ -302,3 +251,12 @@ live_loop :fnn do
   end
   stop
 end
+
+define :yea do |a,b,c|
+  play a
+  play b
+  play c
+  sleep 2
+end
+
+
