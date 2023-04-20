@@ -1,8 +1,18 @@
-
-
-
 use_bpm 112
 use_synth :piano
+o ="C:/Users/evans/OneDrive/Documents/Audacity/Dave - Screwface Capital [ACCAPELLA] (1).wav"
+x=0.25
+live_loop :my_other_lop do
+  5.times do
+    sample :drum_bass_soft, amp: x
+    sleep 1
+    x=x-0.05
+  end
+  stop
+end
+sample o
+sleep 25
+
 define :mmm do
   play :eb5, sustain: 4
   play :c5, sustain: 4
