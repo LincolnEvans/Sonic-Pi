@@ -1,4 +1,4 @@
-heart_attack="C:/Users/Lincoln Evans/Documents/Audacity/Heart Attack.wav"
+heart_attack="C:/Users/evans/Downloads/Heart Attack.wav"
 use_bpm 101
 use_synth :piano
 a=0.08
@@ -246,7 +246,7 @@ live_loop :back do
 end
 live_loop :my_other_lop do
   sleep 40
-  100.times do
+  91.times do
     sample :drum_bass_soft, amp: 0.25
     sleep 1
   end
