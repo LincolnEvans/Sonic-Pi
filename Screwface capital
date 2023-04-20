@@ -190,26 +190,27 @@ live_loop :fn do
   end
   stop
 end
+use_bpm 112
+use_synth :piano
 x=0
 beat = [:g4,:bb4,:g4,:c5,:g4,:d5,:g4,:eb5,:g4,:f5,:g4,:g5,:g4,:bb4,:g4,:c5,:g4,:d5,:g4,:eb5,:g4,:e5,:g4,:f5,:g4,:gb5,:g4]
 snooz = [0.5,0.5,1,0.5,0.5,1,0.5,0.5,0.5,0.5,0.5,1.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
 define :array1 do
   live_loop :arr do
     27.times do
+      print x
       play (beat[x])
       sleep (snooz[x])
       x=x+1
     end
     if x==27
       x=0
-    elsif
+    else
       x=x
     end
     stop
   end
 end
-
-
 
 live_loop :fnn do
   2. times do
