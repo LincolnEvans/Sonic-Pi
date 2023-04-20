@@ -164,7 +164,6 @@ live_loop :front do
     play :f5
     play :d5
     sleep 2
-    best_part
   end
   stop
 end
@@ -241,12 +240,22 @@ live_loop :back do
     play :c3
     sleep 2
     back_mid
+    play :c3
+    play :c2
+    sleep 2
+    play :c3
+    play :c2
+    sleep 1
+    sleep 1
+    play :c3
+    play :c2
+    sleep 4
   end
   stop
 end
 live_loop :my_other_lop do
   sleep 40
-  91.times do
+  93.times do
     sample :drum_bass_soft, amp: 0.25
     sleep 1
   end
