@@ -1,1 +1,18 @@
+count=1
 
+define :ap do |samp|
+  sample samp
+  if count < 4
+    sleep 1
+  elsif count < 8
+    sleep 2
+  else
+    print ("count to big")
+  end
+  print(count)
+  count = count+1
+end
+
+live_loop :sam do
+  ap :ambi_choir
+end
