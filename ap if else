@@ -251,7 +251,7 @@ define :ap do |a,b,c,d|
   elsif count < 9
     sleep 1
   elsif count < 10
-    sleep 2
+    sleep 1
   else
     print ("count to big")
     count =0
