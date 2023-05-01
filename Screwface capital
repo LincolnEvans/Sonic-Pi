@@ -1,6 +1,7 @@
 use_bpm 112
 use_synth :piano
-o ="C:/Users/evans/OneDrive/Documents/Audacity/Dave - Screwface Capital [ACCAPELLA] (1).wav"
+o ="C:/Users/Lincoln Evans/Downloads/Dave - Screwface Capital [ACCAPELLA] (1).wav"
+
 x=0.25
 live_loop :my_other_lop do
   5.times do
@@ -12,7 +13,7 @@ live_loop :my_other_lop do
 end
 sleep 3
 sample o
-sleep 28
+sleep 25.5
 
 define :mmm do
   play :eb5, sustain: 4
@@ -21,7 +22,6 @@ define :mmm do
   sleep 1
   sleep 0.5
 end
-
 
 live_loop :intro do
   5.times do
@@ -48,8 +48,16 @@ live_loop :intro do
     play :e5
     play :ab4
     sleep 1
-    mmm
-    mmm
+    play :eb5, sustain: 4
+    play :c5, sustain: 4
+    play :ab4, sustain: 4
+    sleep 1
+    sleep 0.5
+    play :eb5, sustain: 4
+    play :c5, sustain: 4
+    play :ab4, sustain: 4
+    sleep 1
+    sleep 0.5
     play :c5, sustain: 4
     play :ab4, sustain: 4
     play :eb4, sustain: 4
@@ -190,27 +198,26 @@ live_loop :fn do
   end
   stop
 end
-use_bpm 112
-use_synth :piano
 x=0
 beat = [:g4,:bb4,:g4,:c5,:g4,:d5,:g4,:eb5,:g4,:f5,:g4,:g5,:g4,:bb4,:g4,:c5,:g4,:d5,:g4,:eb5,:g4,:e5,:g4,:f5,:g4,:gb5,:g4]
 snooz = [0.5,0.5,1,0.5,0.5,1,0.5,0.5,0.5,0.5,0.5,1.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5]
 define :array1 do
   live_loop :arr do
     27.times do
-      print x
       play (beat[x])
       sleep (snooz[x])
       x=x+1
     end
     if x==27
       x=0
-    else
+    elsif
       x=x
     end
     stop
   end
 end
+
+
 
 live_loop :fnn do
   2. times do
@@ -240,36 +247,37 @@ live_loop :fnn do
     play :bb2
     play :db3
     sleep 1
-    yea :eb3,:c3,:ab2
-    yea :f3,:d3,:bb2
-    yea :f3,:d3,:bb2
-    yea :g3,:eb3,:c3
-    yea :eb3,:c3,:a2
-    yea :eb3,:c3,:ab2
-    play :c4
-    play :a3
-    play :f3
-    sleep 2
-    play :b3
-    play :g3
-    play :d3
-    play :b2
-    sleep 1
-    play :b3
-    play :g3
-    play :d3
-    play :b2
-    sleep 1
-    play :c4
-    play :b2
-    sleep 2
+    ap :eb3,:c3,:ab2,0
+    ap :f3,:d3,:bb2,0
+    ap :f3,:d3,:bb2,0
+    ap :g3,:eb3,:c3,0
+    ap :eb3,:c3,:a2,0
+    ap :eb3,:c3,:ab2,0
+    ap :c4, :a3, :f3,0
+    ap :b3, :g3, :d3, :b2
+    ap :b3, :g3, :d3, :b2
+    ap :c4, :b2, 0,0
   end
   stop
 end
 
-define :yea do |a,b,c|
+count=1
+
+define :ap do |a,b,c,d|
   play a
   play b
   play c
-  sleep 2
+  play d
+  if count < 8
+    sleep 2
+  elsif count < 9
+    sleep 1
+  elsif count < 10
+    sleep 1
+  else
+    print ("count to big")
+    count =0
+  end
+  print(count)
+  count=count+1
 end
