@@ -1,7 +1,7 @@
 use_bpm 112
 use_synth :piano
 o ="C:/Users/Lincoln Evans/Downloads/Dave - Screwface Capital [ACCAPELLA] (1).wav"
-
+count=1
 x=0.25
 live_loop :my_other_lop do
   5.times do
@@ -75,9 +75,6 @@ live_loop :intro do
   stop
 end
 
-
-
-
 live_loop :intro_back do
   5.times do
     play :c4
@@ -101,9 +98,6 @@ live_loop :intro_back do
   end
   stop
 end
-
-
-
 
 sleep 64
 live_loop :fn do
@@ -217,8 +211,6 @@ define :array1 do
   end
 end
 
-
-
 live_loop :fnn do
   2. times do
     play :d4
@@ -260,8 +252,6 @@ live_loop :fnn do
   end
   stop
 end
-
-count=1
 
 define :ap do |a,b,c,d|
   play a
